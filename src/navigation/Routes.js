@@ -5,6 +5,7 @@ import { createStackNavigator } from '@react-navigation/stack';
 import CalculateScreen from "../screens/CalculateScreen";
 import HomeScreen from "../screens/HomeScreen";
 import {Button, Text} from "react-native";
+import colors from "../styles/colors";
 
 const Stack = createStackNavigator();
 
@@ -14,7 +15,7 @@ const Routes = ({}) => {
       <Stack.Navigator
         screenOptions={{
           headerStyle: {
-            backgroundColor: '#658a7c',
+            backgroundColor: colors.primaryGreen,
           },
           headerTintColor: '#fff'
         }}
