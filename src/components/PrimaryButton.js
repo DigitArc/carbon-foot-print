@@ -14,7 +14,7 @@ const StyledPrimaryButton = styled.TouchableOpacity`
 
 const StyledText = styled.Text`
   color: #000;
-  font-size: ${p => p.fontSize ? p.fontSize : 14}px;
+  font-size: ${p => p.fontSize ? p.fontSize : 14};
   position: relative;
   top: -3px;
 `;
@@ -32,16 +32,25 @@ const StyledBorder = styled.TouchableOpacity`
 
 const PrimaryButton = (props) => {
   const {title, disabled, onPress, width, fontSize} = props;
+  
   const buttonRef = useRef();
+
+  const setButtonOpacity = (opacity) => buttonRef.current.setNativeProps({opacity})
+
   return (
     <>
-      <StyledPrimaryButton onPress={onPress} ref={buttonRef} width={width} disabled={disabled}>
+      <StyledPrimaryButton 
+        onPress={onPress} 
+        ref={buttonRef} 
+        width={width} 
+        disabled={disabled}
+      >
         <StyledText fontSize={fontSize}>{title}</StyledText>
       </StyledPrimaryButton>
       <StyledBorder
         disabled={disabled}
-        onPressIn={() => buttonRef.current.setNativeProps({opacity: 0.5})} 
-        onPressOut={() => buttonRef.current.setNativeProps({opacity: 1})} 
+        onPressIn={() => setButtonOpacity(0.5)} 
+        onPressOut={() => setButtonOpacity(1)} 
         width={width}
         onPress={onPress}
       />
