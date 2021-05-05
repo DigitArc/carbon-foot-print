@@ -1,16 +1,19 @@
 import React from 'react';
 import {Button, Text, View} from "react-native";
+import PrimaryButton from '../components/PrimaryButton';
+import StyledCenterView from '../components/styled/view/StyledCenterView';
 
 const HomeScreen = ({navigation}) => {
 
   return (
-    <View>
+    <StyledCenterView>
       <Text>Home</Text>
-      <Button
+      <PrimaryButton 
         title='CO2 hesapla'
         onPress={() => navigation.navigate('calculate')}
+        width='25%'
       />
-    </View>
+    </StyledCenterView>
   );
 }
 
