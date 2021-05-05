@@ -1,7 +1,7 @@
 import React from 'react';
 import {Button, Text, View} from "react-native";
 import PrimaryButton from '../components/PrimaryButton';
-import StyledCenterView from '../components/styled/view/StyledCenterView';
+import StyledCenterView from '../components/common/view/StyledCenterView';
 
 const HomeScreen = ({navigation}) => {
 
