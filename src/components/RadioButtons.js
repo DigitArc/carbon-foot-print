@@ -1,32 +1,31 @@
 import React, { useState } from 'react';
-import RadioGroup from 'react-native-radio-buttons-group';
+import RadioGroup from './radio-group/RadioGroup';
 import colors from '../styles/colors';
 
-// this data will be come from props 
-const radioButtonsData = [{
-  id: '1',
-  label: 'Option 1',
-  value: 'option1'
-}, {
-  id: '2',
-  label: 'Option 2',
-  value: 'option2'
-}]
-
 const RadioButtons = (props) => {
-  const {data} = props;
+  let {data} = props;
+
+  data = data.answers.map(
+    (answer, i) => (
+      {
+        color: colors.primaryOrange,
+        label: answer,
+        value: answer.toLowerCase().split(' ').join(''),
+        id: i
+      }
+    )
+  )
 
   const [radioButtons, setRadioButtons] = useState(data)
 
-  const onPressRadioButton = (radioButtonsArray) => {
-    setRadioButtons(radioButtonsArray);
-  }
+  const onPressRadioButton = (radioButtonsArray) => setRadioButtons(radioButtonsArray)
 
   return (
     <RadioGroup
-      color={colors.primaryGreen}
+      color={colors.primaryOrange}
       radioButtons={radioButtons} 
-      onPress={onPressRadioButton} 
+      onPress={onPressRadioButton}
+      containerStyle={{backgroundColor: 'white', padding: 10, paddingTop: 12, paddingBottom: 12, borderRadius: 15}}
     />
   )
 }

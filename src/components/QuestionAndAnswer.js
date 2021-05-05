@@ -1,26 +1,25 @@
 import React from 'react'
 import {View, StyleSheet} from 'react-native';
+import styled from 'styled-components/native';
 import colors from '../styles/colors';
 import QuestionBalloon from './QuestionBalloon';
-import DonutChart from './DonutChart';
-import StyledCenterView from './common/view/StyledCenterView';
+
+const AnswerWrapper = styled.View`
+  align-items: flex-start;
+  margin-top: 32px;
+  margin-left: 48px;
+  width: 100%;
+`
 
 const QuestionAndAnswer = (props) => {
-  const {question, answers} = props;
+  const {question, Answer} = props;
+
   return (
     <View style={style.container}>
-      <StyledCenterView>
-        <DonutChart
-          percentage={40} 
-          color={colors.primaryGreen} 
-          delay={500 + 100 * 2} 
-          max={100}
-        />
-      </StyledCenterView>
       <QuestionBalloon question={question} />
-      <StyledCenterView>
-      {answers}
-      </StyledCenterView>
+      <AnswerWrapper>
+      {Answer}
+      </AnswerWrapper>
     </View>
   )
 }
@@ -28,6 +27,7 @@ const QuestionAndAnswer = (props) => {
 const style = StyleSheet.create({
   container: {
     marginTop: 16,
+    height: '60%',
   }
 })
 
