@@ -17,9 +17,9 @@ const data = [
     answerType: 'radio',
     question: 'Karbon ayak izinin ne olduğunu biliyor musunuz ?',
     answers: [
-      'Evet biliyorum',
-      'Hayır bilmiyorum',
-      'Emin değilim',
+      'Evet biliyorum, daha önce duymuştum',
+      'Hayır bilmiyorum, daha önce hic duymadım',
+      'Emin değilim, daha önce duymuş olabilirim',
     ],
     selectedAnswer: '',
   },
@@ -35,12 +35,9 @@ const data = [
 
 const StyledView = styled.View`
   margin: 16px;
-  justify-content: space-between;
+  justify-content: space-around;
   height: 100%;
 `;
-const StyledEndView = styled.View`
-  align-items: flex-end;
-` 
 
 const CalculateScreen = ({navigation}) => {
   const [page, setPage] = useState(0);
@@ -66,15 +63,15 @@ const CalculateScreen = ({navigation}) => {
         } 
       />
 
-      <StyledCenterView>
+      <View style={{alignItems: 'flex-end'}}>
         <PrimaryButton 
-          width="70%"
+          width="20%"
           fontSize={18}
           title='ileri' 
           disabled={(data.length-1) <= page} 
           onPress={() => setPage((x) => x+1)}
         />
-      </StyledCenterView>
+      </View>
     </StyledView>
   )
 }

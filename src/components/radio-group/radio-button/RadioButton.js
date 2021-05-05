@@ -15,8 +15,9 @@ export default function RadioButton({
   size = 24 }) {
 
   const borderWidth = PixelRatio.roundToNearestPixel(size * 0.1);
-  const sizeHalf = PixelRatio.roundToNearestPixel(size * 0.5);
+  const sizeHalf = PixelRatio.roundToNearestPixel(size * 0.8);
   const sizeFull = PixelRatio.roundToNearestPixel(size);
+  const sizeHalfHalf = PixelRatio.roundToNearestPixel(sizeHalf * 0.4);
 
   let orientation = { flexDirection: 'row' }
   let margin = { marginLeft: 10 };
@@ -48,7 +49,7 @@ export default function RadioButton({
             borderWidth,
             width: sizeFull,
             height: sizeFull,
-            borderRadius: sizeHalf
+            borderRadius: sizeHalf,
           }
         ]}>
         {selected && (
@@ -57,9 +58,22 @@ export default function RadioButton({
               backgroundColor: color,
               width: sizeHalf,
               height: sizeHalf,
-              borderRadius: sizeHalf
+              borderRadius: sizeHalf,
+              alignItems: 'center',
+              justifyContent: 'center',
+              position: 'relative',
+              zIndex: 1,
             }}
-          />
+          >
+            <View
+              style={{
+                backgroundColor: borderColor,
+                width: sizeHalfHalf,
+                height: sizeHalfHalf,
+                borderRadius: sizeHalfHalf
+              }}
+            />
+          </View>
         )}
       </View>
       {

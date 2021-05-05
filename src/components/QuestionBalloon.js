@@ -11,11 +11,11 @@ const QuestionBalloon = (props) => {
       backgroundColor='white'
       borderWidth={2}
       borderRadius={5}
-      triangleSize={15}
+      triangleSize={20}
       triangleDirection='left'
       containerStyle={styles.ballonContainer}
     >
-      <Text>{question}</Text>
+      <Text style={styles.text}>{question}</Text>
     </Balloon>
   )
 }
@@ -25,6 +25,9 @@ export default QuestionBalloon
 const styles = StyleSheet.create({
   ballonContainer: {
     paddingLeft: 15,
-    width: '40%',
+    width: '70%',
+  },
+  text: {
+    fontSize: 16,
   }
 })

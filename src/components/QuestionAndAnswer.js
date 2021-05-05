@@ -5,9 +5,8 @@ import colors from '../styles/colors';
 import QuestionBalloon from './QuestionBalloon';
 
 const AnswerWrapper = styled.View`
-  align-items: flex-start;
+  align-items: center;
   margin-top: 32px;
-  margin-left: 48px;
   width: 100%;
 `
 
@@ -27,7 +26,6 @@ const QuestionAndAnswer = (props) => {
 const style = StyleSheet.create({
   container: {
     marginTop: 16,
-    height: '60%',
   }
 })
 
