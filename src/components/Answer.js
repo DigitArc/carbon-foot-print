@@ -1,9 +1,11 @@
 import React from 'react';
 import RadioButtons from '../components/RadioButtons';
 import {Text} from 'react-native';
+import NumberInput from './NumberInput';
 
 const mapAnswer = (props) => ({
   radio: <RadioButtons {...props} />,
+  number: <NumberInput {...props} />
 })
 
 const Answer = ({answerType, ...props}) => {
