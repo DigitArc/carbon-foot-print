@@ -3,9 +3,9 @@ import RadioGroup from './radio-group/RadioGroup';
 import colors from '../styles/colors';
 
 const RadioButtons = (props) => {
-  let {data} = props;
+  let {data, changeData} = props;
 
-  data = data.answers.map(
+  let radioInitialData = data.answers.map(
     (answer, i) => (
       {
         color: colors.primaryOrange,
@@ -16,9 +16,14 @@ const RadioButtons = (props) => {
     )
   )
 
-  const [radioButtons, setRadioButtons] = useState(data)
+  const [radioButtons, setRadioButtons] = useState(radioInitialData)
 
-  const onPressRadioButton = (radioButtonsArray) => setRadioButtons(radioButtonsArray)
+  const onPressRadioButton = (radioButtonsArray) => {
+    setRadioButtons(radioButtonsArray)
+    let tempData = {...data};
+    tempData.selectedAnswer = radioButtons.filter((rb) => rb.selected === true)[0]?.label;
+    changeData(tempData)
+  }
 
   return (
     <RadioGroup

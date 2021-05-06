@@ -10,7 +10,7 @@ import Answer from '../components/Answer';
 import DonutChart from '../components/DonutChart';
 
 // this data filled from backend 
-const data = [
+let data = [
   {
     id: 0,
     page: 0,
@@ -42,6 +42,11 @@ const StyledView = styled.View`
 const CalculateScreen = ({navigation}) => {
   const [page, setPage] = useState(0);
 
+  const changeData = ({id, selectedAnswer}) => {
+    const i = data.findIndex(d => d.id === id);
+    data[i].selectedAnswer = selectedAnswer;
+  }
+
   return (
     <StyledView>
       <StyledCenterView>
@@ -56,22 +61,23 @@ const CalculateScreen = ({navigation}) => {
       <QuestionAndAnswer 
         question={data[page].question} 
         Answer={
-        <Answer 
-          data={data[page]} 
-          answerType={data[page].answerType} 
+          <Answer 
+            data={data[page]} 
+            answerType={data[page].answerType} 
+            changeData={changeData}
           />
         } 
       />
 
-      <View style={{alignItems: 'flex-end'}}>
+      <StyledCenterView>
         <PrimaryButton 
-          width="20%"
+          width="50%"
           fontSize={18}
           title='ileri' 
           disabled={(data.length-1) <= page} 
           onPress={() => setPage((x) => x+1)}
         />
-      </View>
+      </StyledCenterView>
     </StyledView>
   )
 }
