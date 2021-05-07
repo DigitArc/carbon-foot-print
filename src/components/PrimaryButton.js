@@ -14,7 +14,7 @@ const StyledPrimaryButton = styled.TouchableOpacity`
 
 const StyledText = styled.Text`
   color: #000;
-  font-size: ${p => p.fontSize ? p.fontSize : 14};
+  font-size: ${p => p.fontSize ? p.fontSize : 14}px;
   position: relative;
   top: -3px;
 `;
