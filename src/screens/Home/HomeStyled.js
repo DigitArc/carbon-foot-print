@@ -18,11 +18,18 @@ const HomeCard = styled(Card)`
   top: 15%;
   width: 90%;
   height: 80%;
-  /* justify-content: space-around; */
+  justify-content: space-between;
+`
+
+const CalculateCard = styled(Card)`
+  background-color: ${colors.primaryBgClr};
+  width: 100%;
+  justify-content: space-between;
 `
 
 export {
   HomeCard,
   HomeContainer,
   StyledImageBg,
+  CalculateCard,
 }
