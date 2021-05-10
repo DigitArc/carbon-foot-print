@@ -4,33 +4,6 @@ import { View } from 'react-native';
 import styled from 'styled-components/native';
 import colors from '../../../styles/colors';
 
-const StyledPrimaryButton = styled.TouchableOpacity`
-  background-color: ${(p) => p.disabled ? colors.primaryGray : colors.primaryOrange};
-  border-radius: 4px;
-  height: 30px;
-  width: ${p => p.width ? p.width : '100%'};
-  justify-content: center;
-  align-items: center;
-`;
-
-const StyledText = styled.Text`
-  color: #000;
-  font-size: ${p => p.fontSize ? p.fontSize : 14}px;
-  position: relative;
-  top: -3px;
-`;
-
-const StyledBorder = styled.TouchableOpacity`
-  border: #000 solid 1px;
-  height: 30px;
-  border-radius: 4px;
-  width: ${p => p.width ? p.width : '100%'};
-  position: relative;
-  top: -33px;
-  left: 3px;
-`;
-
-
 const PrimaryButton = (props) => {
   const {title, disabled, onPress, width, fontSize} = props;
   
@@ -39,7 +12,7 @@ const PrimaryButton = (props) => {
   const setButtonOpacity = (opacity) => buttonRef.current.setNativeProps({opacity})
 
   return (
-    <View>
+    <View style={{width: width ? width : '100%'}}>
       <StyledPrimaryButton 
         onPress={onPress} 
         ref={buttonRef} 
@@ -58,5 +31,31 @@ const PrimaryButton = (props) => {
     </View>
   )
 }
+
+const StyledPrimaryButton = styled.TouchableOpacity`
+  background-color: ${(p) => p.disabled ? colors.primaryGray : colors.primaryOrange};
+  border-radius: 4px;
+  height: 30px;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+`;
+
+const StyledText = styled.Text`
+  color: #000;
+  font-size: ${p => p.fontSize ? p.fontSize : 14}px;
+  position: relative;
+  top: -3px;
+`;
+
+const StyledBorder = styled.TouchableOpacity`
+  border: #000 solid 1px;
+  height: 30px;
+  border-radius: 4px;
+  width: 100%;
+  position: relative;
+  top: -33px;
+  left: 3px;
+`;
 
 export default PrimaryButton
