@@ -11,6 +11,11 @@ const ResultScreen = ({navigation}) => {
         width='50%'
         onPress={() => navigation.navigate('home')}
       />
+      <PrimaryButton
+        title='iklim projeleri'
+        width='50%'
+        onPress={() => navigation.navigate('climate-projects')}
+      />
     </View>
   )
 }

@@ -29,7 +29,7 @@ const CalculateCard = (props) => {
       <LinkCard>
         <StyledText style={{marginBottom: 8}} size={18} color='black'>Karşılaştırmada karbon ayakizin ne kadar büyük?</StyledText>
         <StyledText style={{marginBottom: 8}} size={14}>Yaşam tarzınızın iklimi nasıl etkilediğini daha iyi anlayın.</StyledText>
-        <Center style={{position: 'relative', bottom: -24}}>
+        <Center style={{position: 'relative'}}>
           <PrimaryButton 
             title='CO2 hesapla'
             onPress={() => navigation.navigate('calculate')}

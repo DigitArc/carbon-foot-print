@@ -6,6 +6,7 @@ import CalculateScreen from "../screens/CalculateScreen";
 import HomeScreen from "../screens/HomeScreen";
 import colors from "../styles/colors";
 import ResultScreen from '../screens/ResultScreen';
+import ClimateProjectsScreen from '../screens/ClimateProjectsScreen';
 
 const Stack = createStackNavigator();
 
@@ -37,6 +38,11 @@ const Routes = ({}) => {
           name='result'
           options={{headerTitle: 'Sonuç'}}
           component={ResultScreen}
+        />
+        <Stack.Screen
+          name='climate-projects'
+          options={{headerTitle: 'İklim projeleri'}}
+          component={ClimateProjectsScreen}
         />
       </Stack.Navigator>
     </NavigationContainer>

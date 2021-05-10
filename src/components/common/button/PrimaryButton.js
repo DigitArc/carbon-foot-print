@@ -12,7 +12,7 @@ const PrimaryButton = (props) => {
   const setButtonOpacity = (opacity) => buttonRef.current.setNativeProps({opacity})
 
   return (
-    <View style={{width: width ? width : '100%'}}>
+    <View style={{width: width ? width : '100%', position: 'relative'}}>
       <StyledPrimaryButton 
         onPress={onPress} 
         ref={buttonRef} 
@@ -53,8 +53,8 @@ const StyledBorder = styled.TouchableOpacity`
   height: 30px;
   border-radius: 4px;
   width: 100%;
-  position: relative;
-  top: -33px;
+  position: absolute;
+  top: -3px;
   left: 3px;
 `;
 
