@@ -1,7 +1,7 @@
 import React from 'react'
 import { View } from 'react-native';
 import NumericInput from 'react-native-numeric-input'
-import colors from '../styles/colors';
+import colors from '../../styles/colors';
 
 const NumberInput = (props) => {
   const {data, changeData} = props;

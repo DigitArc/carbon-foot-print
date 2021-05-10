@@ -1,7 +1,13 @@
 import React from 'react'
 import { StyleSheet, Text } from 'react-native'
 import Balloon from 'react-native-balloon';
-import colors from '../styles/colors';
+import styled from 'styled-components/native';
+import colors from '../../styles/colors';
+
+const BaloonText = styled.Text`
+  font-size: 16px;
+  color: ${colors.primaryTextClr};
+`;
 
 const QuestionBalloon = (props) => {
   const {question} = props;
@@ -15,7 +21,7 @@ const QuestionBalloon = (props) => {
       triangleDirection='left'
       containerStyle={styles.ballonContainer}
     >
-      <Text style={styles.text}>{question}</Text>
+      <BaloonText>{question}</BaloonText>
     </Balloon>
   )
 }
@@ -26,8 +32,5 @@ const styles = StyleSheet.create({
   ballonContainer: {
     paddingLeft: 15,
     width: '70%',
-  },
-  text: {
-    fontSize: 16,
   }
 })

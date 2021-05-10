@@ -1,7 +1,7 @@
 import React from 'react'
 import {View, StyleSheet} from 'react-native';
 import styled from 'styled-components/native';
-import colors from '../styles/colors';
+import colors from '../../styles/colors';
 import QuestionBalloon from './QuestionBalloon';
 
 const AnswerWrapper = styled.View`

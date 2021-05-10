@@ -3,11 +3,11 @@ import {View} from "react-native";
 import styled from 'styled-components/native';
 
 import colors from '../styles/colors';
-import PrimaryButton from '../components/PrimaryButton';
-import QuestionAndAnswer from '../components/QuestionAndAnswer';
-import StyledCenterView from '../components/common/view/StyledCenterView';
-import Answer from '../components/Answer';
-import DonutChart from '../components/DonutChart';
+import PrimaryButton from '../components/common/button/PrimaryButton';
+import QuestionAndAnswer from '../components/quiz/QuestionAndAnswer';
+import StyledCenterView from '../components/common/util/StyledCenterView';
+import Answer from '../components/quiz/Answer';
+import DonutChart from '../components/common/chart/DonutChart';
 
 // this data filled from backend 
 let data = [
@@ -34,9 +34,10 @@ let data = [
 ]
 
 const StyledView = styled.View`
-  margin: 16px;
+  padding: 16px;
   justify-content: space-around;
   height: 100%;
+  background-color: ${colors.primaryBgClr};
 `;
 
 const CalculateScreen = ({navigation}) => {

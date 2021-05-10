@@ -1,5 +1,5 @@
 import React from 'react';
-import RadioButtons from '../components/RadioButtons';
+import RadioButtons from './RadioButtons';
 import {Text} from 'react-native';
 import NumberInput from './NumberInput';
 

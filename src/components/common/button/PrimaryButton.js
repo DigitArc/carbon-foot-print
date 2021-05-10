@@ -1,7 +1,8 @@
 import React from 'react'
 import { useRef } from 'react';
+import { View } from 'react-native';
 import styled from 'styled-components/native';
-import colors from '../styles/colors';
+import colors from '../../../styles/colors';
 
 const StyledPrimaryButton = styled.TouchableOpacity`
   background-color: ${(p) => p.disabled ? colors.primaryGray : colors.primaryOrange};
@@ -38,7 +39,7 @@ const PrimaryButton = (props) => {
   const setButtonOpacity = (opacity) => buttonRef.current.setNativeProps({opacity})
 
   return (
-    <>
+    <View>
       <StyledPrimaryButton 
         onPress={onPress} 
         ref={buttonRef} 
@@ -54,7 +55,7 @@ const PrimaryButton = (props) => {
         width={width}
         onPress={onPress}
       />
-    </>
+    </View>
   )
 }
 

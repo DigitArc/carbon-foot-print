@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import RadioGroup from './radio-group/RadioGroup';
-import colors from '../styles/colors';
+import RadioGroup from '../radio-group/RadioGroup';
+import colors from '../../styles/colors';
 
 const RadioButtons = (props) => {
   let {data, changeData} = props;

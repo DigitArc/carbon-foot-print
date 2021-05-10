@@ -1,4 +1,7 @@
 const colors = {
+  primaryBgClr: '#f5f5f5',
+  primaryTextClr: '#1e1e1e',
+  lightTextClr: '#b3b3b3',
   //GREEN
   primaryGreen: '#658a7c',
   lightGreen: '#9bb5ab',
