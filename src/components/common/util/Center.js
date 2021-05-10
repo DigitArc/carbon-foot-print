@@ -1,9 +1,10 @@
 import React from 'react';
 import styled from 'styled-components/native';
 
-const StyledCenterView = styled.View`
-  justify-content: center;
+const Center = styled.View`
+  /* justify-content: center; */
   align-items: center;
+  width: 100%;
 `;
 
-export default StyledCenterView
+export default Center

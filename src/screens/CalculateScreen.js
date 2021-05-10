@@ -3,11 +3,9 @@ import {View} from "react-native";
 import styled from 'styled-components/native';
 
 import colors from '../styles/colors';
-import PrimaryButton from '../components/common/button/PrimaryButton';
 import QuestionAndAnswer from '../components/quiz/QuestionAndAnswer';
-import StyledCenterView from '../components/common/util/StyledCenterView';
+import { Center, DonutChart, PrimaryButton } from '../components/common';
 import Answer from '../components/quiz/Answer';
-import DonutChart from '../components/common/chart/DonutChart';
 
 // this data filled from backend 
 let data = [
@@ -50,14 +48,14 @@ const CalculateScreen = ({navigation}) => {
 
   return (
     <StyledView>
-      <StyledCenterView>
+      <Center>
         <DonutChart
           percentage={40} 
           color={colors.primaryGreen} 
           delay={500 + 100 * 2} 
           max={100}
         />
-      </StyledCenterView>
+      </Center>
 
       <QuestionAndAnswer 
         question={data[page].question} 
@@ -70,7 +68,7 @@ const CalculateScreen = ({navigation}) => {
         } 
       />
 
-      <StyledCenterView>
+      <Center>
         <PrimaryButton 
           width="50%"
           fontSize={18}
@@ -78,7 +76,7 @@ const CalculateScreen = ({navigation}) => {
           disabled={(data.length-1) <= page} 
           onPress={() => setPage((x) => x+1)}
         />
-      </StyledCenterView>
+      </Center>
     </StyledView>
   )
 }
