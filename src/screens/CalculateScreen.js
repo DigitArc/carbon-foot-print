@@ -69,13 +69,23 @@ const CalculateScreen = ({navigation}) => {
       />
 
       <Center>
-        <PrimaryButton 
-          width="50%"
-          fontSize={18}
-          title='ileri' 
-          disabled={(data.length-1) <= page} 
-          onPress={() => setPage((x) => x+1)}
-        />
+        {(data.length-1) <= page ? (
+          <PrimaryButton
+            width="50%"
+            fontSize={18}
+            title='Bitir' 
+            onPress={() => navigation.navigate('result')}
+          />
+        ) : (
+          <PrimaryButton 
+            width="50%"
+            fontSize={18}
+            title='ileri' 
+            disabled={(data.length-1) <= page} 
+            onPress={() => setPage((x) => x+1)}
+          />
+        )
+        }
       </Center>
     </StyledView>
   )

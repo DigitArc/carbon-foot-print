@@ -9,7 +9,7 @@ import { useNavigation } from '@react-navigation/core';
 const co2Src = {uri: 'https://cdn.vox-cdn.com/thumbor/-vLWQx5wm6WmUJJUaKzxTnZTX3g=/1400x1050/filters:format(jpeg)/cdn.vox-cdn.com/uploads/chorus_asset/file/19159489/co2.jpg'}
 
 
-const HomeCard = (props) => {
+const CalculateCard = (props) => {
 
   const navigation = useNavigation();
 
@@ -55,4 +55,4 @@ const LinkCard = styled(Card)`
   justify-content: space-between;
 `
 
-export default HomeCard
+export default CalculateCard

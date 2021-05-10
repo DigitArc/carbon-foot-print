@@ -3,11 +3,15 @@ import { View } from "react-native";
 import styled from 'styled-components/native';
 import colors from '../styles/colors';
 import { StyledText } from '../components/common';
-import HomeCard from '../components/home/HomeCard';
+import CalculateCard from '../components/home/CalculateCard';
 
 const imgSource = {uri: 'https://c4.wallpaperflare.com/wallpaper/551/1/180/trees-top-view-forest-wallpaper-preview.jpg'};
 
 
+//if have result data see "iklim projeleri(climate projects)" linking 
+const ResultData = {
+
+}
 
 const HomeScreen = ({navigation}) => {
 
@@ -19,7 +23,7 @@ const HomeScreen = ({navigation}) => {
 
       <View style={{flex: 1}} />
 
-      <HomeCard />
+      <CalculateCard />
     </HomeContainer>
   );
 }

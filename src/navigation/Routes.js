@@ -5,6 +5,7 @@ import { createStackNavigator } from '@react-navigation/stack';
 import CalculateScreen from "../screens/CalculateScreen";
 import HomeScreen from "../screens/HomeScreen";
 import colors from "../styles/colors";
+import ResultScreen from '../screens/ResultScreen';
 
 const Stack = createStackNavigator();
 
@@ -31,6 +32,11 @@ const Routes = ({}) => {
           name='home'
           options={{headerTitle: 'CO2-Denkleştirme'}}
           component={HomeScreen}
+        />
+        <Stack.Screen
+          name='result'
+          options={{headerTitle: 'Sonuç'}}
+          component={ResultScreen}
         />
       </Stack.Navigator>
     </NavigationContainer>
